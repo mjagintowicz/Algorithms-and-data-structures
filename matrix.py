@@ -1,6 +1,6 @@
 #skonczone
 
-from typing import Tuple, List
+from typing import Tuple
 
 
 class Matrix:
@@ -73,17 +73,3 @@ test_matrix_1 = Matrix([[3, 1], [2, 1], [1, 0]])
 print(transpose(test_matrix))
 print(test_matrix + ones)
 print(test_matrix * test_matrix_1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
