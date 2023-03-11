@@ -1,4 +1,4 @@
-#nieskonczone
+#skonczone
 
 class Elem:
     def __init__(self, data):
@@ -75,38 +75,41 @@ class LinkedList:
         return s
 
 
-dane = [('AGH', 'Kraków', 1919),
-        ('UJ', 'Kraków', 1364),
-        ('PW', 'Warszawa', 1915),
-        ('UW', 'Warszawa', 1915),
-        ('UP', 'Poznań', 1919),
-        ('PG', 'Gdańsk', 1945)]
+def main():
+    dane = [('AGH', 'Kraków', 1919),
+            ('UJ', 'Kraków', 1364),
+            ('PW', 'Warszawa', 1915),
+            ('UW', 'Warszawa', 1915),
+            ('UP', 'Poznań', 1919),
+            ('PG', 'Gdańsk', 1945)]
 
-uczelnie = LinkedList()
+    uczelnie = LinkedList()
 
-uczelnie.append(dane[0])
-uczelnie.append(dane[1])
-uczelnie.append(dane[2])
+    uczelnie.append(dane[0])
+    uczelnie.append(dane[1])
+    uczelnie.append(dane[2])
+
+    uczelnie.add(dane[3])
+    uczelnie.add(dane[4])
+    uczelnie.add(dane[5])
+
+    print(uczelnie)
+
+    print(uczelnie.length())
+
+    uczelnie.remove()
+
+    print(uczelnie.head.data_)
+
+    uczelnie.remove_end()
+
+    print(uczelnie)
+
+    uczelnie.destroy()
+    print(uczelnie.is_empty())
+
+    uczelnie.remove()
+    uczelnie.remove_end()
 
 
-uczelnie.add(dane[3])
-uczelnie.add(dane[4])
-uczelnie.add(dane[5])
-
-print(uczelnie)
-print(uczelnie.length())
-
-uczelnie.remove()
-
-print(uczelnie.head.data_)
-
-uczelnie.remove_end()
-
-print(uczelnie)
-
-uczelnie.destroy()
-print(uczelnie.is_empty())
-
-uczelnie.remove()
-uczelnie.remove_end()
-
+main()
