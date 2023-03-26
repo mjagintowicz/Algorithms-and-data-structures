@@ -1,4 +1,4 @@
-#nieskonczone
+#skonczone
 
 tab_size = 6
 
@@ -8,7 +8,7 @@ class Elem:
         self.size = tab_size
         self.tab = [None for i in range(self.size)]
         self.count = 0
-        self.next = None #to wskazuje na następny elem, czyli następną tablicę
+        self.next = None
 
     def insert(self, inx: int, data):
         if inx >= self.count:
@@ -44,15 +44,12 @@ class Unrolled:
                     if inx - counts[it] < 0:
                         return tab.tab[inx]
                     inx -= counts[it]
-
-        #dodatkowo
         try:
             raise ValueError('wrong index!')
         except ValueError as err:
             print(err)
 
     def insert(self, inx: int, data):
-        size = 0
         if not self.list:
             new_tab = Elem()
             self.list.append(new_tab)
@@ -61,10 +58,20 @@ class Unrolled:
             counts = []
             for tab in self.list:
                 counts.append(tab.count)
-                size += tab_size
-                if inx < size:
+                if inx <= sum(counts):
                     if tab.count != tab_size:
-                        tab.insert(tab.count, data)
+                        for it in range(len(counts)):
+                            if inx - counts[it] <= 0:
+                                tab.insert(inx, data)
+                                break
+                            inx -= counts[it]
+                        break
+                    elif tab.next is None:
+                        new_tab = Elem()
+                        new_tab.next = tab.next
+                        tab.next = new_tab
+                        self.list.insert(self.list.index(tab) + 1, new_tab)
+                        new_tab.insert(new_tab.count, data)
                         break
                     else:
                         new_tab = Elem()
@@ -92,11 +99,6 @@ class Unrolled:
                                     tab.insert(inx, data)
                                     break
                         break
-            if inx >= size:
-                new_tab = Elem()
-                self.list[-1].next = new_tab
-                self.list.append(new_tab)
-                new_tab.insert(0, data)
 
     def delete(self, inx: int):
         counts = []
@@ -121,7 +123,11 @@ class Unrolled:
                         inx -= counts[it]
                         it += 1
                 break
-#co tan dopisac value error or sth
+        if inx > sum(counts):
+            try:
+                raise ValueError("wrong index!")
+            except ValueError as err:
+                print(err)
 
     def __str__(self):
         s = '['
@@ -139,22 +145,20 @@ class Unrolled:
 def main():
     test_list = Unrolled()
 
-    #to wstawienie działa
     for num in range(1, 10):
         test_list.insert(num-1, num)
-    #print(test_list)
+    print(test_list)
 
-    #to też działa
-    #print(test_list.get(4))
+    print(test_list.get(4))
 
-    #insert2
     test_list.insert(1, 10)
-    test_list.insert(8, 11) #to się zapisuje na 7, zeby wypełnić tamtą tablice, bo ona ma miejsca na indeksy 7 i 8
-    # więc może trzeba to zmienić, że zapisało się pod startm inx8 a nie wolnym
-    #print(test_list)
+    print(test_list)
+    test_list.insert(8, 11)
+    print(test_list)
 
-    #del
     test_list.delete(1)
     test_list.delete(2)
     print(test_list)
+
+
 main()
