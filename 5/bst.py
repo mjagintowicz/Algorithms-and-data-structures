@@ -1,4 +1,4 @@
-# nieskończone
+# skończone
 
 
 class Node:
