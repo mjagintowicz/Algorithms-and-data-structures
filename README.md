@@ -16,5 +16,5 @@ Oceny za zadania (max. 5 pkt. za zadanie obowiązkowe, 2 za dodatkowe):
 5. - Implementacja drzewa binarnergo: 5/5
    - ???
    
-6. - ???
+6. - Kopcowa implementacja kolejki priorytetowej: ???
    - ???
