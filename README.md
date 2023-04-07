@@ -12,3 +12,9 @@ Oceny za zadania (max. 5 pkt. za zadanie obowiązkowe, 2 za dodatkowe):
 
 4. - Implementacja tablicy mieszającej: 3.5/5 (search i remove źle działają - mają złą złożoność O(n))
    - Implementacja listy z przeskokami: ???
+   
+5. - Implementacja drzewa binarnergo: 5/5
+   - ???
+   
+6. - ???
+   - ???
