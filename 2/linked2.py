@@ -23,9 +23,13 @@ class LinkedList:
 
     def add(self, data):
         elem = Elem(data)
-        elem.next_ = self.head
-        self.head.prev_ = elem
-        self.head = elem
+        if self.head is None and self.tail is None:
+            self.head = elem
+            self.tail = elem
+        else:
+            elem.next_ = self.head
+            self.head.prev_ = elem
+            self.head = elem
 
     def append(self, data):
         elem = Elem(data)
@@ -128,4 +132,3 @@ def main():
 
 
 main()
-
