@@ -1,4 +1,4 @@
-#skonczone
+# skonczone
 
 tab_size = 6
 
