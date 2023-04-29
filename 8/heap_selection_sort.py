@@ -1,4 +1,4 @@
-# nieskonczone
+# skonczone
 
 import random
 import time
