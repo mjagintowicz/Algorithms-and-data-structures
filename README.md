@@ -17,4 +17,10 @@ Oceny za zadania (max. 5 pkt. za zadanie obowiązkowe, 2 za dodatkowe):
    - AVL
    
 6. - Heap
-   - ???
+
+7. - Graph (adjecency matrix, adjacency list)
+   - Graph coloring
+   
+8. - Heap sort + Selection sort
+
+???
