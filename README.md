@@ -1,6 +1,5 @@
 # Algorithms and data structures (AGH, Automatics and Robotics 2022/2023)
 
-Oceny za zadania (max. 5 pkt. za zadanie obowiązkowe, 2 za dodatkowe):
 1. - Matrix
    - Determinant of a matrix (Chio's method)
    
