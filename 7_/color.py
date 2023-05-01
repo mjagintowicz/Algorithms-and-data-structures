@@ -170,13 +170,11 @@ class GraphList:
             for k in list(self.graph[i].keys()):
                 edg.append((self.get_vertex(i), self.get_vertex(k)))
         return edg
-###
 
 
 def color(graph, method):
     visited = []
     color_inx = []
-    color = 1
     stack = []
     stack_val = []
     if method == 0:
@@ -188,10 +186,7 @@ def color(graph, method):
             v_val = stack_val.pop()
             if v not in visited:
                 visited.append(v)
-                if color - 1 < 1:
-                    color_inx.append(color)
-                else:
-                    color_inx.append(color-1)
+                color_inx.append(1)
                 for neigh in reversed(graph.neighbours(v_val)):
                     if neigh not in visited:
                         stack.append(str(neigh))
@@ -218,10 +213,7 @@ def color(graph, method):
             v_val = stack_val.pop(0)
             if v not in visited:
                 visited.append(v)
-                if color - 1 < 1:
-                    color_inx.append(color)
-                else:
-                    color_inx.append(color-1)
+                color_inx.append(1)
                 for neigh in graph.neighbours(v_val):
                     if neigh not in visited:
                         stack.append(str(neigh))
