@@ -21,5 +21,6 @@
    - Graph coloring
    
 8. - Heap sort + Selection sort
-
+   - Insertion sort + Shellsort
+   
 ???
