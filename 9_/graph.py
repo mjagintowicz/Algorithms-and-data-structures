@@ -1,5 +1,3 @@
-#import polska
-# dla grafów nieskierowanych
 class Node:
 
     def __init__(self, key):
@@ -176,56 +174,17 @@ class GraphList:
             for k in list(self.graph[i].keys()):
                 edg.append((self.get_vertex(i), self.get_vertex(k)))
         return edg
+    
+    def edges_inx(self):
+        edg = []
+        for i in range(self.order()):
+            for k in list(self.graph[i].keys()):
+                edg.append((i, k))
+        return edg
 
-"""""
-def main():
-    m = GraphMatrix()
-    for it in range(len(polska.graf)):
-        new_node1 = Node(polska.graf[it][0])
-        new_node2 = Node(polska.graf[it][1])
-
-        if new_node1 not in m.nodes.keys():
-            m.insert_vertex(new_node1)
-        if new_node2 not in m.nodes.keys():
-            m.insert_vertex(new_node2)
-
-        m.insert_edge(new_node1, new_node2)
-
-    m.delete_vertex('K')
-    m.delete_edge('E', 'W')
-    polska.draw_map(m.edges())
-
-    l = GraphList()
-    for it in range(len(polska.graf)):
-        new_node1 = Node(polska.graf[it][0])
-        new_node2 = Node(polska.graf[it][1])
-
-        if new_node1 not in l.nodes.keys():
-            l.insert_vertex(new_node1)
-        if new_node2 not in l.nodes.keys():
-            l.insert_vertex(new_node2)
-
-        l.insert_edge(new_node1, new_node2)
-
-    l.delete_vertex('K')
-    l.delete_edge('E', 'W')
-    polska.draw_map(l.edges())
-"""""
-
-def main():
-    l = GraphList()
-    for it in range(len(polska.graf)):
-        new_node1 = Node(polska.graf[it][0])
-        new_node2 = Node(polska.graf[it][1])
-
-        if new_node1 not in l.nodes.keys():
-            l.insert_vertex(new_node1)
-        if new_node2 not in l.nodes.keys():
-            l.insert_vertex(new_node2)
-
-        l.insert_edge(new_node1, new_node2)
-
-
-
-# graph - lista słowników [{sąsiad_inx: waga krawędzi, s2_inx: w2, s3_inx: w3}, {sąsiad: waga}]
-# nodes - słownik {nazwa wierzchołka: inx}
+    def edges_weights(self):
+        edg = []
+        for i in range(self.order()):
+            for k in list(self.graph[i].keys()):
+                edg.append((i, k, self.graph[i][k]))
+        return edg
