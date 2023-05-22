@@ -26,4 +26,7 @@
 9. - Prim's Minimum Spanning Tree Algorithm
    - Kruskals's Minimum Spanning Tree Algorithm
 
+10. - Ford–Fulkerson algorithm
+
+???
 ???
